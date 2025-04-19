@@ -46,6 +46,16 @@
             bindings = <&kp MINUS>;
             key-positions = <7 8>;
         };
+
+        under_bar {
+            bindings = <&kp UNDER>;
+            key-positions = <19 20>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <32 31>;
+        };
     };
 
     macros {
@@ -73,10 +83,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R  &kp T                                    &kp Y  &kp U  &lt 6 I    &kp O    &kp P
-&mt LCTRL A       &kp S         &kp D         &kp F  &kp G  &kp LS(LG(S))      &kp MINUS      &kp H  &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &kp COLON          &kp SEMICOLON  &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mo 3  &mo 4  &kp SPACE          &kp ENTER      &mo 2                             &kp DEL
+&kp Q             &kp W         &kp E         &kp R  &kp T                                         &kp Y  &kp U  &lt 5 I    &kp O    &kp P
+&mt LCTRL A       &kp S         &kp D         &kp F  &kp G  &kp LS(LG(S))         &kp RIGHT_SHIFT  &kp H  &kp J  &kp K      &kp L    &kp SQT
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &kp LEFT_CONTROL      &kp SEMICOLON    &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mo 2  &mo 3  &kp SPACE             &kp ENTER        &mo 7                             &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>, <&inc_dec_kp 0 0>;
@@ -88,15 +98,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
 &trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
 &trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
-            >;
-        };
-
-        hennkan {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans   &trans         &trans   &kp LPAR          &kp RPAR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp F10  &kp BACKSPACE  &kp DEL  &kp LEFT_BRACKET  &kp RBKT
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans   &trans         &trans   &kp LBRC          &kp RBRC
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                             &trans
             >;
         };
 
@@ -144,6 +145,15 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+            >;
+        };
+
+        hennkan {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &none    &none          &none    &kp LPAR          &kp RPAR
+&trans  &trans  &trans  &trans  &trans  &trans      &none   &kp F10  &kp BACKSPACE  &kp DEL  &kp LEFT_BRACKET  &kp RBKT
+&trans  &trans  &trans  &trans  &trans  &trans      &none   &kp F7   &none          &none    &kp LBRC          &kp RBRC
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                             &none
             >;
         };
     };
