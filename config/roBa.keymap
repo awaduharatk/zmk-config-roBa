@@ -26,23 +26,13 @@
             key-positions = <10 11>;
         };
 
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
-
         henkan {
             bindings = <&kp LC(SPACE)>;
             key-positions = <13 12>;
             layers = <0>;
         };
 
-        haihun {
+        haihun_old {
             bindings = <&kp MINUS>;
             key-positions = <7 8>;
         };
@@ -75,6 +65,11 @@
         next_up {
             bindings = <&kp LC(PAGE_UP)>;
             key-positions = <25 24>;
+        };
+
+        haihun {
+            bindings = <&kp MINUS>;
+            key-positions = <9 8>;
         };
     };
 
@@ -132,10 +127,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp HOME                 &kp END                          &kp F5   &none          &kp F2      &kp LPAR  &kp RPAR
-&kp LCTRL       &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp PAGE_UP  &trans      &trans  &kp F10  &kp BACKSPACE  &kp DELETE  &kp LBKT  &kp RBKT
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &kp PG_DN    &trans      &trans  &trans   &kp F7         &trans      &kp LBRC  &kp RBRC
-&trans          &trans                  &trans          &trans                   &trans       &trans      &trans  &trans                                        &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp HOME                 &kp END                                    &kp F5   &none          &kp F2      &kp LPAR  &kp RPAR
+&kp LCTRL       &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp PAGE_UP  &trans             &kp LG(V)  &kp F10  &kp BACKSPACE  &kp DELETE  &kp LBKT  &kp RBKT
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &kp PG_DN    &kp LA(SPACE)      &trans     &trans   &kp F7         &trans      &kp LBRC  &kp RBRC
+&trans          &trans                  &trans          &trans                   &trans       &trans             &trans     &trans                                        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -162,18 +157,9 @@
         layer_6 {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
-            >;
-        };
-
-        hennkan {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &none    &none          &none    &kp LPAR          &kp RPAR
-&trans  &trans  &trans  &trans  &trans  &trans      &none   &kp F10  &kp BACKSPACE  &kp DEL  &kp LEFT_BRACKET  &kp RBKT
-&trans  &trans  &trans  &trans  &trans  &trans      &none   &kp F7   &none          &none    &kp LBRC          &kp RBRC
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                             &none
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &none
             >;
         };
     };
