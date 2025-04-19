@@ -126,7 +126,7 @@
 &trans                &trans  &trans  &trans  &trans      &trans            &trans     &trans                                                    &kp PIPE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN 4>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
         ARROW {
@@ -137,7 +137,7 @@
 &trans          &trans                  &trans          &trans                   &trans       &trans             &trans     &trans                                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN) 4>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         MOUSE {
