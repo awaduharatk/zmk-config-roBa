@@ -98,7 +98,8 @@
 
         alt_tab_hold: alt_tab_hold {
             compatible = "zmk,behavior-macro";
-            bindings = <&alt_hold>, <&kp TAB>;
+            #binding-cells = <0>;
+            bindings = <&kp TAB>;
             label = "ALT_TAB_HOLD";
         };
     };
@@ -112,14 +113,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
-        alt_hold: alt_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ALT_HOLD";
-            bindings = <&kp LEFT_ALT>, <&none>;
-            tapping-term-ms = <1000>;
-        };
-
     };
 
     keymap {
