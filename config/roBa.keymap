@@ -81,6 +81,11 @@
             bindings = <&kp F10>;
             key-positions = <13 11>;
         };
+
+        space_shift {
+            bindings = <&kp LS(SPACE)>;
+            key-positions = <29 17>;
+        };
     };
 
     macros {
@@ -89,6 +94,13 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
+
+        alt_tab_hold: alt_tab_hold {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>;
+            label = "ALT_TAB_HOLD";
         };
     };
 
@@ -141,7 +153,7 @@
 
         ARROW {
             bindings = <
-&kp LA(TAB)     &kp LS(LA(TAB))     &kp UP_ARROW    &kp HOME             &kp END                                    &kp F5     &kp F3         &kp F2      &kp LPAR  &kp RPAR
+&alt_tab_hold   &kp LS(LA(TAB))     &kp UP_ARROW    &kp HOME             &kp END                                    &kp F5     &kp F3         &kp F2      &kp LPAR  &kp RPAR
 &kp LCTRL       &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp PAGE_UP  &trans             &kp F7     &kp F10    &kp BACKSPACE  &kp DELETE  &kp LBKT  &kp RBKT
 &kp LEFT_SHIFT  &kp LC(LEFT_ARROW)  &trans          &kp LC(RIGHT_ARROW)  &kp PG_DN    &kp LA(SPACE)      &kp LC(Z)  &kp LC(V)  &kp LC(C)      &kp LC(X)   &kp LBRC  &kp RBRC
 &kp GRAVE       &trans              &trans          &trans               &trans       &trans             &trans     &trans                                          &kp LA(F4)
