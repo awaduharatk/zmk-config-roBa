@@ -74,7 +74,7 @@
 
         format {
             bindings = <&kp LA(LS(F))>;
-            key-positions = <4 2>;
+            key-positions = <4 3>;
         };
 
         F10tap {
