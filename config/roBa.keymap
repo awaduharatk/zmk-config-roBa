@@ -59,7 +59,7 @@
 
         next_page {
             bindings = <&kp LC(PAGE_DOWN)>;
-            key-positions = <26 25>;
+            key-positions = <24 23>;
         };
 
         next_up {
