@@ -59,12 +59,12 @@
 
         next_page {
             bindings = <&kp LC(PAGE_DOWN)>;
-            key-positions = <24 23>;
+            key-positions = <24 25>;
         };
 
         next_up {
             bindings = <&kp LC(PAGE_UP)>;
-            key-positions = <25 24>;
+            key-positions = <24 23>;
         };
 
         format {
@@ -77,9 +77,14 @@
             key-positions = <13 11>;
         };
 
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <20 21>;
+        };
+
         colon {
             bindings = <&kp COLON>;
-            key-positions = <20 21>;
+            key-positions = <20 19>;
         };
     };
 
