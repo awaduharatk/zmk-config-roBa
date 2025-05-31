@@ -59,6 +59,9 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         automouse-layer = <4>;
         scroll-layers = <5>;
+        cpi-up-key = <&CPI_UP>;    // 感度を上げるキー
+        cpi-down-key = <&CPI_DOWN>; // 感度を下げるキー
+        cpi-step = <50>;  // CPI変更幅を50に設定
     };
 };
 
