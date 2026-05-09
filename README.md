@@ -20,3 +20,35 @@
 6. 右が終わったら左も同じ手順で書き込んで完了
 
 > ペアリング情報がおかしくなった場合は左右両方に `settings_reset` の uf2 を書き込み、その後 右 → 左 の順で通常ファームを書き直す。
+
+## IME ON / OFF (Windows + US配列)
+
+キーボード側のコンボ：
+
+| コンボ       | 物理キー | 送信キー   | 動作         |
+| ------------ | -------- | ---------- | ------------ |
+| `muhenkan`   | S+D      | F13        | IME OFF      |
+| `henkan`     | D+F      | F14        | IME ON       |
+| `ime_toggle` | F+G      | Ctrl+Space | 従来のトグル |
+
+US配列では `INT_HENKAN`/`INT_MUHENKAN` のキーコードが Windows のキーボードドライバ層でフィルタされ IME に届かないため、F13/F14 を中継キーとして使い、PowerToys 側で IME-On/Off に再マップする方式を採用している。
+
+### 必須セットアップ：PowerToys Keyboard Manager
+
+PowerToys が **常駐していないと F13/F14 → IME-On/Off の再マップが効かない**。別 PC を使う場合はそちらにも同じ設定が必要。
+
+1. [Microsoft PowerToys](https://learn.microsoft.com/ja-jp/windows/powertoys/) をインストール
+2. PowerToys を起動 → **Keyboard Manager** を有効化
+3. **キーの再マップ** を開き、以下を追加（`IME On` / `IME Off` はドロップダウンの検索ボックスに `IME` と入力すると候補に出る）：
+
+   | 物理キー (送信側) | マップ先 |
+   | ----------------- | -------- |
+   | F13               | IME Off  |
+   | F14               | IME On   |
+
+4. 保存して PowerToys を常駐起動のままにする
+
+### 補足
+
+- Microsoft IME 側のカスタマイズ（「キーとタッチのカスタマイズ」）は **不要**（PowerToys が VK を直接送るため IME 側でそのまま認識される）
+- F+G コンボの `Ctrl+Space` トグルは PowerToys 不要で OS のデフォルト IME 切替が動く

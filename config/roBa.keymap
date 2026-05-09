@@ -27,14 +27,20 @@
         };
 
         henkan {
-            bindings = <&kp INT_HENKAN>;
+            bindings = <&kp F14>;
             key-positions = <13 12>;
             layers = <0>;
         };
 
         muhenkan {
-            bindings = <&kp INT_MUHENKAN>;
+            bindings = <&kp F13>;
             key-positions = <11 12>;
+            layers = <0>;
+        };
+
+        ime_toggle {
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <14 13>;
             layers = <0>;
         };
 
