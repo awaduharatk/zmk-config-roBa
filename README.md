@@ -31,24 +31,41 @@
 | `henkan`     | D+F      | F14        | IME ON       |
 | `ime_toggle` | F+G      | Ctrl+Space | 従来のトグル |
 
-US配列では `INT_HENKAN`/`INT_MUHENKAN` のキーコードが Windows のキーボードドライバ層でフィルタされ IME に届かないため、F13/F14 を中継キーとして使い、PowerToys 側で IME-On/Off に再マップする方式を採用している。
+US配列では `INT_HENKAN`/`INT_MUHENKAN` のキーコードが Windows のキーボードドライバ層でフィルタされ IME に届かないため、F13/F14 を中継キーとして使い、**PowerToys で「変換 / 無変換」VK に再マップ → Microsoft IME で「変換 / 無変換」を IME-オン / IME-オフ に割り当て** という二段構成にしている。
 
-### 必須セットアップ：PowerToys Keyboard Manager
+### セットアップ 1：PowerToys Keyboard Manager
 
-PowerToys が **常駐していないと F13/F14 → IME-On/Off の再マップが効かない**。別 PC を使う場合はそちらにも同じ設定が必要。
+PowerToys が **常駐していないと F13/F14 の再マップが効かない**。別 PC を使う場合はそちらにも同じ設定が必要。
 
 1. [Microsoft PowerToys](https://learn.microsoft.com/ja-jp/windows/powertoys/) をインストール
 2. PowerToys を起動 → **Keyboard Manager** を有効化
-3. **キーの再マップ** を開き、以下を追加（`IME On` / `IME Off` はドロップダウンの検索ボックスに `IME` と入力すると候補に出る）：
+3. **キーの再マップ** を開き、以下を追加：
 
-   | 物理キー (送信側) | マップ先 |
-   | ----------------- | -------- |
-   | F13               | IME Off  |
-   | F14               | IME On   |
+   | 物理キー (送信側) | マップ先        |
+   | ----------------- | --------------- |
+   | F13               | IME Non-Convert |
+   | F14               | IME Convert     |
 
 4. 保存して PowerToys を常駐起動のままにする
 
+> 環境によっては `IME On` / `IME Off` の項目が無いので、ここでは **無変換 (`IME Non-Convert`) / 変換 (`IME Convert`)** に再マップする。Microsoft IME 側で IME のオン・オフに紐付ける（次のステップ）。
+
+### セットアップ 2：Microsoft IME のキー割り当て
+
+1. `Win + I` → 時刻と言語 → 言語と地域
+2. 「日本語」 → 言語のオプション
+3. **Microsoft IME** → キーボードオプション → **キーとタッチのカスタマイズ**
+4. 「**キーの割り当て**」のスイッチを **オン**
+5. 以下を割り当てる：
+   - **無変換キー** → **IME-オフ**
+   - **変換キー** → **IME-オン**
+
+> 「キーの割り当て」が機能しない・項目が出ない場合は、同じ画面の **「以前のバージョンの Microsoft IME を使う」** をオンにしてから再度設定する。
+
+### 反映
+
+設定後、**Windows をサインアウト → サインイン**（または再起動）が必要。設定だけ保存しても、起動済みのプロセスには適用されないことがある。
+
 ### 補足
 
-- Microsoft IME 側のカスタマイズ（「キーとタッチのカスタマイズ」）は **不要**（PowerToys が VK を直接送るため IME 側でそのまま認識される）
-- F+G コンボの `Ctrl+Space` トグルは PowerToys 不要で OS のデフォルト IME 切替が動く
+- F+G コンボの `Ctrl+Space` トグルは PowerToys / IME 設定なしで OS のデフォルト IME 切替が動く
