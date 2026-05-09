@@ -27,8 +27,14 @@
         };
 
         henkan {
-            bindings = <&kp LC(SPACE)>;
+            bindings = <&kp INT_HENKAN>;
             key-positions = <13 12>;
+            layers = <0>;
+        };
+
+        muhenkan {
+            bindings = <&kp INT_MUHENKAN>;
+            key-positions = <11 12>;
             layers = <0>;
         };
 
